@@ -20,7 +20,7 @@ function App() {
       <CitiesProvider>
         <BrowserRouter>
           <Routes>
-            <Route index element={<Homepage />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="product" element={<Product />} />
             <Route path="pricing" element={<Pricing />} />
             <Route path="login" element={<Login />} />
