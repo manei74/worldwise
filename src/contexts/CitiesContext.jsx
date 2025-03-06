@@ -5,7 +5,8 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 
 const CitiesContext = createContext();
 
-const BASE_URL = "http://localhost:8000";
+// const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://api-worldwise.onrender.com";
 
 const initialState = {
   cities: [],
@@ -62,7 +63,6 @@ function CitiesProvider({ children }) {
     reducer,
     initialState
   );
-
   useEffect(function () {
     async function fetchCities() {
       dispatch({ type: "loading" });
@@ -70,7 +70,9 @@ function CitiesProvider({ children }) {
       try {
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
-        dispatch({ type: "cities/loaded", payload: data });
+        const dataM = data.cities || [];
+        console.log(dataM);
+        dispatch({ type: "cities/loaded", payload: dataM });
       } catch {
         dispatch({
           type: "rejected",
@@ -89,11 +91,15 @@ function CitiesProvider({ children }) {
     try {
       const res = await fetch(`${BASE_URL}/cities/${id}`);
       const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch {
+      if (res.ok) {
+        dispatch({ type: "city/loaded", payload: data });
+      } else {
+        throw new Error(data.error || "Failed to fetch city");
+      }
+    } catch (error) {
       dispatch({
         type: "rejected",
-        payload: "There was an error loading city",
+        payload: `There was an error loading city: ${error.message}`,
       });
     }
   }
@@ -109,8 +115,11 @@ function CitiesProvider({ children }) {
         },
       });
       const data = await res.json();
-
-      dispatch({ type: "city/created", payload: data });
+      if (res.ok) {
+        dispatch({ type: "city/created", payload: data });
+      } else {
+        throw new Error(data.error || "Failed to create city");
+      }
     } catch {
       dispatch({
         type: "rejected",
@@ -122,10 +131,15 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loading" });
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
+      const res = await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
-      dispatch({ type: "city/deleted", payload: id });
+      const data = await res.json();
+      if (res.ok) {
+        dispatch({ type: "city/deleted", payload: id });
+      } else {
+        throw new Error(data.error || "Failed to delete city");
+      }
     } catch {
       dispatch({
         type: "rejected",
