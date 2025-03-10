@@ -24,3 +24,15 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.google {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}

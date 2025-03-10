@@ -1,30 +1,37 @@
 import { useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import PageNav from "../components/PageNav";
-import { useAuth } from "../contexts/FakeAuthContext";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Login() {
-  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const { user, login, loginWithGoogle, register, error } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // PRE-FILL FOR DEV PURPOSES
-  const [email, setEmail] = useState("jack@example.com");
-  const [password, setPassword] = useState("qwerty");
+  useEffect(() => {
+    if (user) {
+      navigate("/app");
+    }
+  }, [user, navigate]);
 
-  function handleLogin(e) {
+  // Handle Login
+  async function handleLogin(e) {
     e.preventDefault();
-
-    if (email && password) login(email, password);
+    await login(email, password);
   }
 
-  useEffect(
-    function () {
-      if (isAuthenticated === true) navigate("/app");
-    },
-    [isAuthenticated, navigate]
-  );
+  // Handle Registration
+  async function handleRegister(e) {
+    e.preventDefault();
+    await register(email, password);
+  }
+
+  async function handleGoogleLogin() {
+    await loginWithGoogle();
+  }
 
   return (
     <main className={styles.login}>
@@ -38,6 +45,7 @@ export default function Login() {
             id="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           />
         </div>
 
@@ -48,11 +56,32 @@ export default function Login() {
             id="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            required
           />
         </div>
 
-        <div>
-          <Button typeStyle="primary">Login</Button>
+        {error && <p className={styles.error}>{error}</p>}
+
+        <div className={styles.line}>
+          <Button typeStyle="primary" onClick={handleLogin}>
+            Login
+          </Button>
+
+          <Button typeStyle="primary" onClick={handleRegister}>
+            Register
+          </Button>
+        </div>
+
+        <div className={styles.google}>
+          <Button typeStyle="primary" onClick={handleGoogleLogin}>
+            <img
+              src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+              alt="Google Logo"
+              width="20"
+              style={{ marginRight: "10px" }}
+            />
+            Sign in with Google
+          </Button>
         </div>
       </form>
     </main>

@@ -1,52 +1,56 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
-      "id": "8e1c",
-      "cityName": "Brescia",
+      "id": "d141",
+      "cityName": "Stagno Lombardo",
       "country": "Italy",
       "emoji": "🇮🇹",
-      "date": "2025-03-02T15:15:59.610Z",
-      "notes": "rwsr",
+      "date": "2025-03-10T18:18:35.179Z",
+      "notes": "1",
       "position": {
-        "lat": "45.50057194157223",
-        "lng": "10.261230468750002"
-      }
+        "lat": "45.047086995398935",
+        "lng": "10.110855102539064"
+      },
+      "userId": "92ySeewK90g4Co33M3GyYUDfdUn1"
+    },
+    {
+      "id": "0bd7",
+      "cityName": "Aldeanueva de Barbarroya",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-03-10T18:19:10.023Z",
+      "notes": "2",
+      "position": {
+        "lat": "39.707186656826565",
+        "lng": "-5.009765625000001"
+      },
+      "userId": "92ySeewK90g4Co33M3GyYUDfdUn1"
+    },
+    {
+      "id": "51df",
+      "cityName": "Lafayette-Louisville",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2025-03-10T18:20:51.135Z",
+      "notes": "3",
+      "position": {
+        "lat": "39.937382175009525",
+        "lng": "-105.15615463256836"
+      },
+      "userId": "92ySeewK90g4Co33M3GyYUDfdUn1"
+    },
+    {
+      "id": "8077",
+      "cityName": "Polesine Zibello",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2025-03-10T18:32:20.260Z",
+      "notes": "1",
+      "position": {
+        "lat": "45.00899141623566",
+        "lng": "10.04905700683594"
+      },
+      "userId": "72EfKvHE8RfsX9XBpzmwVO1uIwC2"
     }
   ]
 }

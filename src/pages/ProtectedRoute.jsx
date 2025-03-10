@@ -1,20 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/FakeAuthContext";
-import { useEffect } from "react";
 /* eslint-disable react/prop-types */
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-function ProtectedRoute({ children }) {
-  const { isAuthenticated } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(
-    function () {
-      if (!isAuthenticated) navigate("/");
-    },
-    [isAuthenticated, navigate]
-  );
-
-  return isAuthenticated ? children : null;
-}
+const ProtectedRoute = ({ children }) => {
+  const { user } = useAuth();
+  return user ? children : <Navigate to="/login" />;
+};
 
 export default ProtectedRoute;

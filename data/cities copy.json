@@ -1,0 +1,136 @@
+{
+  "cities": [
+    {
+      "cityName": "Denver",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2025-03-06T17:40:01.495Z",
+      "notes": "home",
+      "position": {
+        "lat": "39.73517821171905",
+        "lng": "-104.98603820800783"
+      },
+      "id": "2025-03-06T17:40:09.853Z"
+    },
+    {
+      "cityName": "Seattle",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-09-06T16:40:27.000Z",
+      "notes": "International 24",
+      "position": {
+        "lat": "47.60801481973273",
+        "lng": "-122.32589721679689"
+      },
+      "id": "2025-03-06T17:40:45.592Z"
+    },
+    {
+      "cityName": "Las Vegas",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-11-10T17:41:03.000Z",
+      "notes": "mini trip",
+      "position": {
+        "lat": "36.1733569352216",
+        "lng": "-115.14358520507814"
+      },
+      "id": "2025-03-06T17:42:16.988Z"
+    },
+    {
+      "cityName": "Miami",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-08-02T16:42:39.000Z",
+      "notes": "Chris 1 year",
+      "position": {
+        "lat": "25.788144792391982",
+        "lng": "-80.13015747070314"
+      },
+      "id": "2025-03-06T17:42:54.825Z"
+    },
+    {
+      "cityName": "San Diego",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2022-10-06T16:43:21.000Z",
+      "notes": "border",
+      "position": {
+        "lat": "32.56417577360889",
+        "lng": "-117.0421600341797"
+      },
+      "id": "2025-03-06T17:43:34.060Z"
+    },
+    {
+      "cityName": "Tijuana",
+      "country": "Mexico",
+      "emoji": "🇲🇽",
+      "date": "2022-10-05T16:43:39.000Z",
+      "notes": "last step",
+      "position": {
+        "lat": "32.52713149992711",
+        "lng": "-117.02362060546875"
+      },
+      "id": "2025-03-06T17:44:13.063Z"
+    },
+    {
+      "cityName": "Mexico City",
+      "country": "Mexico",
+      "emoji": "🇲🇽",
+      "date": "2022-09-27T16:45:12.000Z",
+      "notes": "fun 10 days",
+      "position": {
+        "lat": "19.458823317103146",
+        "lng": "-99.12963867187501"
+      },
+      "id": "2025-03-06T17:46:04.560Z"
+    },
+    {
+      "cityName": "Batumi",
+      "country": "Georgia",
+      "emoji": "🇬🇪",
+      "date": "2022-09-09T16:47:23.000Z",
+      "notes": "",
+      "position": {
+        "lat": "41.623655390686395",
+        "lng": "41.68212890625"
+      },
+      "id": "2025-03-06T17:47:52.282Z"
+    },
+    {
+      "cityName": "Olhov",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2022-08-01T16:48:50.000Z",
+      "notes": "Prev home",
+      "position": {
+        "lat": "50.622078200020354",
+        "lng": "37.936563491821296"
+      },
+      "id": "2025-03-06T17:49:09.957Z"
+    },
+    {
+      "cityName": "Moscow",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2022-05-01T16:49:29.000Z",
+      "notes": "",
+      "position": {
+        "lat": "55.750690087043814",
+        "lng": "37.62559890747071"
+      },
+      "id": "2025-03-06T17:49:39.915Z"
+    },
+    {
+      "cityName": "Chelyabinsk",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2020-01-01T17:50:36.000Z",
+      "notes": "native city",
+      "position": {
+        "lat": "55.16475007322765",
+        "lng": "61.42181396484376"
+      },
+      "id": "2025-03-06T17:51:03.649Z"
+    }
+  ]
+}
