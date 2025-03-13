@@ -10,8 +10,9 @@ import PropTypes from "prop-types";
 
 const CitiesContext = createContext();
 
-const BASE_URL =
-  "https://1b0472dd-3dc8-49ed-ab19-1cbaa46b29c8-00-xbqkp0co6wyg.spock.replit.dev";
+// const BASE_URL =
+//   "https://1b0472dd-3dc8-49ed-ab19-1cbaa46b29c8-00-xbqkp0co6wyg.spock.replit.dev";
+const BASE_URL = "http://155.138.174.124:8000";
 // const BASE_URL = "http://localhost:8000";
 // const BASE_URL = "https://api-worldwise.onrender.com";
 

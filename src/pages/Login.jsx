@@ -7,7 +7,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { user, login, loginWithGoogle, register, error } = useAuth();
+  const { user, login, loginWithGoogle, error, passwordreset } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,10 +23,16 @@ export default function Login() {
     await login(email, password);
   }
 
-  // Handle Registration
-  async function handleRegister(e) {
+  async function handlePasswordReset(e) {
     e.preventDefault();
-    await register(email, password);
+
+    await passwordreset(email);
+    // console.log("Password reset email sent!");
+  }
+
+  async function handleSignup(e) {
+    e.preventDefault();
+    navigate("/register");
   }
 
   async function handleGoogleLogin() {
@@ -67,23 +73,27 @@ export default function Login() {
             Login
           </Button>
 
-          <Button typeStyle="primary" onClick={handleRegister}>
-            Register
+          <Button typeStyle="back" onClick={handlePasswordReset}>
+            Forgot password?
           </Button>
         </div>
-
-        <div className={styles.google}>
-          <Button typeStyle="primary" onClick={handleGoogleLogin}>
-            <img
-              src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
-              alt="Google Logo"
-              width="20"
-              style={{ marginRight: "10px" }}
-            />
-            Sign in with Google
-          </Button>
-        </div>
+        <div className={styles.orsignup}>or sign up with</div>
+        <Button typeStyle="primary" onClick={handleGoogleLogin}>
+          <img
+            src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+            alt="Google Logo"
+            width="20"
+            style={{ marginRight: "10px" }}
+          />
+          Sign in with Google
+        </Button>
       </form>
+      <div className={styles.signup}>
+        <h3>Don’t have an account?</h3>
+        <Button typeStyle="primary" onClick={handleSignup}>
+          Sign up
+        </Button>
+      </div>
     </main>
   );
 }

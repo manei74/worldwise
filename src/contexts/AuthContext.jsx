@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */ // You can remove this after fixing props validation
 import {
   createContext,
   useContext,
@@ -15,6 +14,8 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 const AuthContext = createContext();
@@ -87,10 +88,23 @@ function AuthProvider({ children }) {
         email,
         password
       );
-      dispatch({ type: "login", payload: userCredential.user });
+      const user = userCredential.user;
+      await sendEmailVerification(user);
+      console.log("Verification email sent!");
+      dispatch({ type: "login", payload: user });
     } catch (error) {
       setError(error.message);
       console.error("Registration Error:", error.message);
+    }
+  }
+
+  async function passwordreset(email) {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      console.log("Password reset email sent!");
+      setError("Password reset email sent!");
+    } catch (error) {
+      setError(error.message);
     }
   }
 
@@ -107,6 +121,7 @@ function AuthProvider({ children }) {
         login,
         loginWithGoogle,
         register,
+        passwordreset,
         logout,
         error,
       }}
