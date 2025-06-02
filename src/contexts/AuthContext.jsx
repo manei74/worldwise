@@ -37,7 +37,6 @@ function reducer(state, action) {
 }
 
 function AuthProvider({ children }) {
-  // ✅ Added prop validation
   const [{ user, isAuthenticated }, dispatch] = useReducer(
     reducer,
     initialState
@@ -131,7 +130,6 @@ function AuthProvider({ children }) {
   );
 }
 
-// ✅ Prop validation for children
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
